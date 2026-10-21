@@ -1,0 +1,45 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f6f9; color: #222; }
+
+.topo { background: #1f3a5f; color: #fff; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.topo a { color: #fff; text-decoration: none; }
+.logo { font-size: 1.2rem; font-weight: bold; }
+.topo nav a { margin-left: 16px; }
+.topo nav a:hover { text-decoration: underline; }
+
+.conteudo { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+.rodape { text-align: center; color: #777; padding: 20px; font-size: 0.85rem; }
+
+h1 { margin-top: 0; }
+.sub { color: #555; }
+.vazio { color: #888; font-style: italic; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.card { background: #fff; border-radius: 8px; padding: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+.card h2 { margin-top: 0; font-size: 1.15rem; }
+.card h2 a { color: #1f3a5f; text-decoration: none; }
+.card ul { padding-left: 18px; }
+.contador { background: #1f3a5f; color: #fff; border-radius: 12px; padding: 2px 9px; font-size: 0.8rem; margin-left: 6px; }
+
+.linha-titulo { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e3e7ee; }
+th { background: #e9eef6; }
+.acoes { display: flex; gap: 6px; }
+.acoes form { margin: 0; }
+
+.botao { display: inline-block; background: #2d7dd2; color: #fff; border: none; border-radius: 6px; padding: 9px 16px; text-decoration: none; cursor: pointer; font-size: 0.95rem; }
+.botao:hover { opacity: .9; }
+.botao.pequeno { padding: 5px 10px; font-size: 0.85rem; }
+.botao.perigo { background: #d64545; }
+.botao.cinza { background: #7a869a; }
+
+.formulario { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.12); max-width: 520px; }
+.formulario label { display: block; margin-top: 12px; font-weight: bold; }
+.formulario input { width: 100%; padding: 9px; margin-top: 4px; border: 1px solid #c4cbd6; border-radius: 6px; font-size: 1rem; }
+.botoes-form { margin-top: 18px; display: flex; gap: 8px; }
+.erro { background: #fde8e8; color: #a12020; padding: 10px 12px; border-radius: 6px; max-width: 520px; }
+
+.aluno { font-size: 1.2rem; color: #1f3a5f; }
+.card .botao { margin-right: 6px; }

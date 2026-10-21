@@ -1,0 +1,28 @@
+<%- include('partials/header', { titulo: titulo }) %>
+
+<h1><%= titulo %></h1>
+
+<% if (erro) { %>
+  <p class="erro"><%= erro %></p>
+<% } %>
+
+<form method="POST" action="<%= acao %>" class="formulario">
+  <% entidade.campos.forEach(function(campo) { %>
+    <label for="<%= campo.nome %>"><%= campo.rotulo %><%= campo.obrigatorio ? ' *' : '' %></label>
+    <input
+      type="<%= campo.tipo %>"
+      id="<%= campo.nome %>"
+      name="<%= campo.nome %>"
+      value="<%= item[campo.nome] || '' %>"
+      <% if (campo.passo) { %>step="<%= campo.passo %>" min="0"<% } %>
+      <% if (campo.obrigatorio) { %>required<% } %>
+    >
+  <% }); %>
+
+  <div class="botoes-form">
+    <button type="submit" class="botao">Salvar</button>
+    <a class="botao cinza" href="/<%= entidade.tabela %>">Cancelar</a>
+  </div>
+</form>
+
+<%- include('partials/footer') %>

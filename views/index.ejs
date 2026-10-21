@@ -1,0 +1,17 @@
+<%- include('partials/header', { titulo: 'Início' }) %>
+
+<h1>Sistema de Cadastro</h1>
+<p class="aluno">Aluno: <strong>Davi Geraldo</strong></p>
+<p class="sub">Escolha um cadastro para começar.</p>
+
+<div class="cards">
+  <% entidades.forEach(function(e) { %>
+    <section class="card">
+      <h2><a href="/<%= e.tabela %>"><%= e.plural %></a></h2>
+      <a class="botao" href="/<%= e.tabela %>">Ver <%= e.plural %></a>
+      <a class="botao cinza" href="/<%= e.tabela %>/novo">+ Novo</a>
+    </section>
+  <% }); %>
+</div>
+
+<%- include('partials/footer') %>

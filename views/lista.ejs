@@ -1,0 +1,41 @@
+<%- include('partials/header', { titulo: entidade.plural }) %>
+
+<div class="linha-titulo">
+  <h1><%= entidade.plural %></h1>
+  <a class="botao" href="/<%= entidade.tabela %>/novo">+ Novo <%= entidade.singular %></a>
+</div>
+
+<% if (itens.length === 0) { %>
+  <p class="vazio">Nenhum registro cadastrado.</p>
+<% } else { %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <% entidade.campos.forEach(function(campo) { %>
+          <th><%= campo.rotulo %></th>
+        <% }); %>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% itens.forEach(function(item) { %>
+        <tr>
+          <td><%= item.id %></td>
+          <% entidade.campos.forEach(function(campo) { %>
+            <td><%= item[campo.nome] %></td>
+          <% }); %>
+          <td class="acoes">
+            <a class="botao pequeno" href="/<%= entidade.tabela %>/<%= item.id %>/editar">Editar</a>
+            <form method="POST" action="/<%= entidade.tabela %>/<%= item.id %>/excluir"
+                  onsubmit="return confirm('Deseja excluir este registro?');">
+              <button type="submit" class="botao pequeno perigo">Excluir</button>
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } %>
+
+<%- include('partials/footer') %>
